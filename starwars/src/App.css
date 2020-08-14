@@ -1,8 +1,12 @@
-.App {
-  text-align: center;
+@import url('https://fonts.google.com/specimen/Space+Mono?query=space&preview.text=CHARACTERS&preview.text_type=custom');
+
+.Character {
+  font-family: monospace;
 }
+
 .Header {
   color: #443e3e;
   text-shadow: 1px 1px 5px #fff;
+  font-family: monospace;
 }
 /* write your parent styles in here for your App.js */

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './App.css';
-import Character from './components/Character'
+import Character from './components/Character';
+import styled from 'styled-components'
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -16,20 +17,28 @@ const App = () => {
     .then(res => {
       setCharacterList(res.data.results)
     })
-    .catch(err => {
-      debugger
-    })
+    // .catch(err => {
+    //   debugger
+    // })
   },[])
 
-  // const names = characterList.map(a => a.name)
-  // console.log(names)
+const StyledHeader = styled.h1`
+  font-weight:bold;
+  font-style:italic;
+  font-size:300%;
+  text-align:center;
+  border-bottom:2px solid black;
+  padding:1%;
+`
  
 
 
   return (
     <div className="App">
-      <h1 className="Header">Characters</h1>
-      <Character names = {characterList.map(a => a.name)}/>
+      <StyledHeader className = 'Header'>CHARACTERS</StyledHeader>
+      {characterList.map(a => {
+        return    <Character character = {a}/>
+      })}
     </div>
     );
 }
